@@ -1,9 +1,9 @@
-package com.cart.model;
+package com.cart.bookmark;
 
 /**
  * Created by hansik on 2015. 9. 25..
  */
-public class BookMark {
+public class Bookmark {
 
     private int id;
     private int categoryId;

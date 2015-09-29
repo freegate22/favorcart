@@ -1,4 +1,4 @@
-package com.cart.model;
+package com.cart.category;
 
 /**
  * Created by hansik on 2015. 9. 25..
