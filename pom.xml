@@ -149,11 +149,6 @@
             <version>1.2</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.derby</groupId>
-            <artifactId>derbyclient</artifactId>
-            <version>10.11.1.1</version>
-        </dependency>
 
     </dependencies>
 

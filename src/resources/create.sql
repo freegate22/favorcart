@@ -1,7 +1,7 @@
-CREATE TABLE `category` (
-  `category_id` int(11) NOT NULL AUTO_INCREMENT,
-  `category_name` varchar(100) NOT NULL,
-  PRIMARY KEY (`category_id`)
+CREATE TABLE `folder` (
+  `folder_id` int(11) NOT NULL AUTO_INCREMENT,
+  `folder_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`folder_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `bookmark` (

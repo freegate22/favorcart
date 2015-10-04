@@ -2,14 +2,14 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.cart.category.Category" table="category">
+    <class name="com.cart.folder.Folder" table="folder">
         <id name="id" type="int" unsaved-value="null">
-            <column name="category_id" sql-type="int(11)" not-null="true" />
+            <column name="folder_id" sql-type="int(11)" not-null="true" />
             <generator class="assigned" />
         </id>
 
         <property name="name">
-            <column name="category_name" length="100" not-null="true" />
+            <column name="folder_name" length="100" not-null="true" />
         </property>
 
     </class>

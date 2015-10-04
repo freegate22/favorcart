@@ -4,11 +4,13 @@
 <hibernate-configuration>
     <session-factory >
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.password">dkcladp1m</property>
         <property name="hibernate.connection.url">jdbc:mysql://hsoh.cjyjnijbaq7z.ap-northeast-1.rds.amazonaws.com:3306</property>
         <property name="hibernate.connection.username">hsoh</property>
+        <property name="hibernate.connection.password">dkcladp1m</property>
         <property name="hibernate.default_schema">hsoh</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        <mapping resource="resources/Category.hbm.xml"/>
+        <mapping resource="Bookmark.hbm.xml"/>
+        <mapping resource="User.hbm.xml"/>
+        <mapping resource="Folder.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

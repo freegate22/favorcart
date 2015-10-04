@@ -1,7 +1,8 @@
 package com.cart.bookmark;
 
 import com.cart.HibernateUtil;
-import com.cart.category.Category;
+import com.cart.folder.Folder;
+import com.cart.user.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Controller;
@@ -21,15 +22,30 @@ public class BookmarkController {
         Session hbSession = null;
         Transaction tx = null;
 
-        Category category = new Category();
-        category.setId(1);
-        category.setName("test1");
+        Bookmark bookmark = new Bookmark();
+        bookmark.setName("aabb");
+        bookmark.setCategoryId(1);
+        bookmark.setUrl("aabb" );
+
+        Folder folder = new Folder();
+        folder.setName("test3");
+
+        User user = new User();
+        user.setId("aa");
+        user.setPassword("ccc");
+
+
+
         try {
             hbSession = HibernateUtil.getSessionFactory().openSession();
             tx = hbSession.beginTransaction();
-            System.out.println("suc");
-            // Hibernate 세션을 이용한 CRUD 처리 코드
-            hbSession.save(category);
+
+//            User user2 = (User) hbSession.get(User.class, "aa");
+//            user2.setPassword("update");
+//            hbSession.save(bookmark);
+            hbSession.save(folder);
+
+            System.out.println("succ");
             tx.commit();
         } catch(Exception ex) {
             if (tx != null) tx.rollback();

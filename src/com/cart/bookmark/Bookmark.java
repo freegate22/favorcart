@@ -1,10 +1,18 @@
 package com.cart.bookmark;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Created by hansik on 2015. 9. 25..
  */
+@Entity
 public class Bookmark {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int categoryId;
     private String name;

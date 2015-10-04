@@ -1,4 +1,4 @@
-package com.cart.category;
+package com.cart.folder;
 
 import com.cart.HibernateUtil;
 import org.hibernate.Session;
@@ -9,7 +9,7 @@ import org.hibernate.Transaction;
  */
 
 
-public class CategoryController {
+public class FolderController {
     public static void main(String[] args) {
         Session hbSession = null;
         Transaction tx = null;
