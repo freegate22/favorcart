@@ -6,7 +6,7 @@ CREATE TABLE `folder` (
 
 CREATE TABLE `bookmark` (
   `bookmark_id` int(11) NOT NULL AUTO_INCREMENT,
-  `category_id` int(11) NOT NULL,
+  `folder_id` int(11) NOT NULL,
   `bookmark_name` varchar(100) NOT NULL,
   `bookmark_url` text NOT NULL,
   PRIMARY KEY (`bookmark_id`)

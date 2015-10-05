@@ -14,7 +14,7 @@ public class Bookmark {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int categoryId;
+    private int folderId;
     private String name;
     private String url;
 
@@ -26,12 +26,12 @@ public class Bookmark {
         this.id = id;
     }
 
-    public int getCategoryId() {
-        return categoryId;
+    public int getFolderId() {
+        return folderId;
     }
 
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+    public void setFolderId(int folderId) {
+        this.folderId = folderId;
     }
 
     public String getName() {
