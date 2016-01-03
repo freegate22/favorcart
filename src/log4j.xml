@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+    <!-- Appender, Layout 설정 -->
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout/>
+        </Console>
+        <File name="file" fileName="./logs/file/sample.log" append="false">
+            <PatternLayout pattern="%d %5p [%c] %m%n"/>
+        </File>
+    </Appenders>
+
+    <!-- Logger 설정 -->
+    <Loggers>
+        <Logger name="egovLogger" level="DEBUG" additivity="false">
+            <AppenderRef ref="console"/>
+            <AppenderRef ref="file"/>
+        </Logger>
+        <Rootlevel="ERROR">
+        <AppenderRef ref="console"/>
+    </Root>
+</Loggers>
+
+        </Configuration>
