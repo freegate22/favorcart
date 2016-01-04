@@ -19,7 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration("context.xml")
+@ContextConfiguration("/test-context.xml")
 public class CommonControllerTest {
 
     MockMvc mockMvc;

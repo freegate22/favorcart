@@ -20,7 +20,7 @@
         <testSourceDirectory>src/test</testSourceDirectory>
         <resources>
             <resource>
-                <directory>src/main/java/resources</directory>
+                <directory>src/main/resources</directory>
             </resource>
         </resources>
         <testResources>
@@ -78,12 +78,8 @@
 
 
     <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-        </dependency>
 
+        <!-- spring -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -104,6 +100,7 @@
             <artifactId>spring-jdbc</artifactId>
             <version>${springVersion}</version>
         </dependency>
+
         <!--
             <dependency>
         <groupId>junit</groupId>
@@ -167,6 +164,11 @@
         </dependency>
 
         <!-- for test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
         <dependency>
             <groupId>net.sourceforge.cobertura</groupId>
             <artifactId>cobertura</artifactId>
