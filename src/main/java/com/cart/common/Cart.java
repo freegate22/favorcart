@@ -5,6 +5,23 @@ package main.java.com.cart.common;
  */
 public class Cart {
 
+    enum Type {
+        FOLDER("folder"),
+        BOOKMARK("bookmark");
+
+        private String value;
+
+        private Type(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+    }
+
+
     private String type;
     private String action;
     private String folderId;

@@ -27,11 +27,10 @@ public class CartController extends GenericController<User, Integer, UserService
     public @ResponseBody List<Cart> sync(
             HttpServletRequest request, HttpServletResponse response,
             @RequestParam(value = "cmdList", required = true) String cmdList) {
-        System.out.println(cmdList);
+
         boolean isJsonValid = CommonUtil.isJsonValid(cmdList);
         if( isJsonValid ) {
             // 성공 코드 전송
-            System.out.println("succc");
             response.setStatus( HttpServletResponse.SC_OK );
             return cartService.update(cmdList);
 
