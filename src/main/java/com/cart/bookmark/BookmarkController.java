@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 
 @Controller
-@RequestMapping("/1/bookmark")
+//@RequestMapping("/1/bookmark")
 public class BookmarkController {
 
     @Autowired BookmarkService bookmarkService;

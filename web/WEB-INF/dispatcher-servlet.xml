@@ -12,8 +12,7 @@
 
 
     <mvc:annotation-driven/>
-
-    <context:component-scan base-package="main.java.com.cart.bookmark" />
+    <context:component-scan base-package="main.java.com.cart" />
 
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.UrlBasedViewResolver">

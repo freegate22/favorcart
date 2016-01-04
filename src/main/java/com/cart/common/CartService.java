@@ -33,7 +33,7 @@ public class CartService {
 
         // 1. json 뽑기
         // 2. action 순회
-        // 3. 같은 폴더 또는 북마크인 경우 마지막명령 수행
+        // 3. 같은 폴더 또는 북마크인 경우 최신시간 정보를 이용해서 마지막명령 수행
         // 4. 달라진 부분 모아 respolse
 
         return lstCart;

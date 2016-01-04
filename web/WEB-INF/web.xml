@@ -10,6 +10,10 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <async-supported>true</async-supported>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
     <!--
 
 
@@ -28,8 +32,5 @@
         <async-supported>true</async-supported>
     </servlet>-->
 
-    <servlet-mapping>
-        <servlet-name>dispatcher</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
+
 </web-app>

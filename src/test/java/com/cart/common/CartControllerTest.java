@@ -20,7 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration("/test-context.xml")
-public class CommonControllerTest {
+public class CartControllerTest {
 
     MockMvc mockMvc;
 
@@ -30,7 +30,6 @@ public class CommonControllerTest {
     @Before
     public void setup() {
         this.mockMvc = MockMvcBuilders.webAppContextSetup(this.webApplicationContext).build();
-//        this.mockMvc = MockMvcBuilders.standaloneSetup(new CartController()).build();
     }
 
     @Test
@@ -39,13 +38,14 @@ public class CommonControllerTest {
         String cmdList = "[{\"type\":\"tt\",\"action\":\"aa\",\"folderId\":\"Ff\",\"destFolderId\":\"dd\",\"name\":\"nn\",\"url\":\"uu\",\"bookmarkId\":\"bb\",\"regDate\":1451712414982},{\"type\":\"tt2\",\"action\":\"aa2\",\"folderId\":\"Ff2\",\"destFolderId\":\"dd2\",\"name\":\"nn2\",\"url\":\"uu2\",\"bookmarkId\":\"bb2\",\"regDate\":1451712414982}]";
 
         mockMvc.perform(post("/1/sync")
-//                        .param("cmdList", cmdList)
-        ).andDo(print());
-//                .andExpect(status().isOk());
+                .param("cmdList", cmdList))
+                .andDo(print())
+//                .andExpect(status().isOk())
 //                .andExpect(content().contentType("application/json"))
-//                .andExpect(jsonPath("$", hasSize(2))
 //                .andExpect(jsonPath("$[0].id").exists())
-//                .andExpect(jsonPath("$[0].fn").value("Marge"));
+//                .andExpect(jsonPath("$[0].fn").value("Marge"))
+//                .andExpect(jsonPath("$", hasSize(2)))
+                ;
     }
 
     @Test
