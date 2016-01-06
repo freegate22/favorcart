@@ -12,17 +12,17 @@
     <title>Dashboard Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="Dashboard Template for Bootstrap_files/bootstrap.min.css" rel="stylesheet">
+    <link href="boot/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="Dashboard Template for Bootstrap_files/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="boot/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="Dashboard Template for Bootstrap_files/dashboard.css" rel="stylesheet">
+    <link href="boot/dashboard.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="Dashboard Template for Bootstrap_files/ie-emulation-modes-warning.js"></script>
+    <script src="boot/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -241,13 +241,13 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="Dashboard Template for Bootstrap_files/jquery.min.js"></script>
+    <script src="boot/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="Dashboard Template for Bootstrap_files/bootstrap.min.js"></script>
+    <script src="boot/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="Dashboard Template for Bootstrap_files/holder.min.js"></script>
+    <script src="boot/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="Dashboard Template for Bootstrap_files/ie10-viewport-bug-workaround.js"></script>
+    <script src="boot/ie10-viewport-bug-workaround.js"></script>
   
 
 </body></html>
