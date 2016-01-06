@@ -3,6 +3,7 @@ package main.java.com.cart.folder;
 import main.java.com.cart.common.Cart;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,6 +18,6 @@ public class FolderService {
 
     public List<Cart> update(List<Cart> lstFolder) {
 
-        return null;
+        return new ArrayList<>();
     }
 }
