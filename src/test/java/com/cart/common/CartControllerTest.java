@@ -11,10 +11,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
+import static org.hamcrest.Matchers.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 /**
  * Created by hshs on 2016. 1. 2..
  */
@@ -41,12 +41,14 @@ public class CartControllerTest {
 
         mockMvc.perform(post("/1/sync")
                 .param("cmdList", cmdList))
-//                .andDo(print())
+                .andDo(print())
                 .andExpect(status().isOk())
-//                .andExpect(content().contentType("application/json"))
-//                .andExpect(jsonPath("$[0].id").exists())
-//                .andExpect(jsonPath("$[0].fn").value("Marge"))
-//                .andExpect(jsonPath("$", hasSize(2)))
+                .andExpect(content().contentType(TestUtil.APPLICATION_JSON_UTF8))
+                .andExpect(jsonPath("$", hasSize(4)))
+                .andExpect(jsonPath("$[0].id", is(1)))
+                .andExpect(jsonPath("$[0].name", is("박용권")))
+                .andExpect(jsonPath("$[0].age", is(34)))
+                .andExpect(jsonPath("$[0].sex", is("MALE")))
                 ;
     }
 

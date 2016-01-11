@@ -18,33 +18,37 @@ import java.util.List;
  * Created by hshs on 2016. 1. 1..
  */
 @Controller
-@RequestMapping("/1")
-public class CartController extends GenericController<User, Integer, UserService>{
+//@RequestMapping("/1")
+@RequestMapping(value={"/1","/"})
+public class CartController {
 
     @Autowired
     CartService cartService;
 
     @RequestMapping(value="/sync")
-    public @ResponseBody
-    ModelAndView sync(
+    public @ResponseBody List<Cart> sync(
             HttpServletRequest request, HttpServletResponse response,
-            @RequestParam(value = "cmdList", required = true) String cmdList) {
+            @RequestParam(value = "cmdList", required = false) String cmdList) {
 
-        response.setStatus( HttpServletResponse.SC_OK );
-        return new ModelAndView();
-//        boolean isJsonValid = CommonUtil.isJsonValid(cmdList);
-//        if( isJsonValid ) {
-//            // 성공 코드 전송
-//            response.setStatus( HttpServletResponse.SC_OK );
-//            return cartService.update(cmdList);
-//
-//        } else {
-//            response.setStatus( HttpServletResponse.SC_BAD_REQUEST);
-//            // 잘못된 json 요청 에러
-//            // 실패 코드 전송송
-//        }
+        System.out.println("!!!!!!!!!!!!");
+        System.out.println(cmdList;
+        boolean isJsonValid = CommonUtil.isJsonValid(cmdList);
+        if( isJsonValid ) {
+            System.out.println("AAAAAAAAAAAAA");
+            // 성공 코드 전송
+            response.setStatus( HttpServletResponse.SC_OK );
+            List<Cart> list = cartService.update(cmdList);
+            System.out.println(list);
+            return cartService.update(cmdList);
 
-//        return new ArrayList<Cart>();
+        } else {
+            System.out.println("BBBBBBBBBBBBB");
+            response.setStatus( HttpServletResponse.SC_BAD_REQUEST);
+            // 잘못된 json 요청 에러
+            // 실패 코드 전송송
+        }
+
+        return new ArrayList<Cart>();
     }
 
     @RequestMapping(value="/new")
