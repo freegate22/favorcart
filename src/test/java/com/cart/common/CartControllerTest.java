@@ -13,13 +13,14 @@ import org.springframework.web.context.WebApplicationContext;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
  * Created by hshs on 2016. 1. 2..
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration("/test-context.xml")
+@ContextConfiguration(classes = {TestContext.class})
 public class CartControllerTest {
 
     MockMvc mockMvc;
@@ -40,8 +41,8 @@ public class CartControllerTest {
 
         mockMvc.perform(post("/1/sync")
                 .param("cmdList", cmdList))
-                .andDo(print())
-//                .andExpect(status().isOk())
+//                .andDo(print())
+                .andExpect(status().isOk())
 //                .andExpect(content().contentType("application/json"))
 //                .andExpect(jsonPath("$[0].id").exists())
 //                .andExpect(jsonPath("$[0].fn").value("Marge"))

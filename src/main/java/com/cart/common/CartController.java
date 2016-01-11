@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,23 +25,26 @@ public class CartController extends GenericController<User, Integer, UserService
     CartService cartService;
 
     @RequestMapping(value="/sync")
-    public @ResponseBody List<Cart> sync(
+    public @ResponseBody
+    ModelAndView sync(
             HttpServletRequest request, HttpServletResponse response,
             @RequestParam(value = "cmdList", required = true) String cmdList) {
 
-        boolean isJsonValid = CommonUtil.isJsonValid(cmdList);
-        if( isJsonValid ) {
-            // 성공 코드 전송
-            response.setStatus( HttpServletResponse.SC_OK );
-            return cartService.update(cmdList);
+        response.setStatus( HttpServletResponse.SC_OK );
+        return new ModelAndView();
+//        boolean isJsonValid = CommonUtil.isJsonValid(cmdList);
+//        if( isJsonValid ) {
+//            // 성공 코드 전송
+//            response.setStatus( HttpServletResponse.SC_OK );
+//            return cartService.update(cmdList);
+//
+//        } else {
+//            response.setStatus( HttpServletResponse.SC_BAD_REQUEST);
+//            // 잘못된 json 요청 에러
+//            // 실패 코드 전송송
+//        }
 
-        } else {
-            response.setStatus( HttpServletResponse.SC_BAD_REQUEST);
-            // 잘못된 json 요청 에러
-            // 실패 코드 전송송
-        }
-
-        return new ArrayList<Cart>();
+//        return new ArrayList<Cart>();
     }
 
     @RequestMapping(value="/new")
