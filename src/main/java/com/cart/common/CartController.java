@@ -31,7 +31,7 @@ public class CartController {
             @RequestParam(value = "cmdList", required = false) String cmdList) {
 
         System.out.println("!!!!!!!!!!!!");
-        System.out.println(cmdList;
+//        System.out.println(cmdList;
         boolean isJsonValid = CommonUtil.isJsonValid(cmdList);
         if( isJsonValid ) {
             System.out.println("AAAAAAAAAAAAA");
