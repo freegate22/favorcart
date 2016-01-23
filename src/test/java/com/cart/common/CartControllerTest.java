@@ -44,11 +44,11 @@ public class CartControllerTest {
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(TestUtil.APPLICATION_JSON_UTF8))
-                .andExpect(jsonPath("$", hasSize(4)))
-                .andExpect(jsonPath("$[0].id", is(1)))
-                .andExpect(jsonPath("$[0].name", is("박용권")))
-                .andExpect(jsonPath("$[0].age", is(34)))
-                .andExpect(jsonPath("$[0].sex", is("MALE")))
+                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$[0].type", is("folder")))
+//                .andExpect(jsonPath("$[0].name", is("박용권")))
+//                .andExpect(jsonPath("$[0].age", is(34)))
+//                .andExpect(jsonPath("$[0].sex", is("MALE")))
                 ;
     }
 

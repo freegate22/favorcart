@@ -1,5 +1,7 @@
 package main.java.com.cart.common;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import main.java.com.cart.user.User;
 import main.java.com.cart.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,30 +28,31 @@ public class CartController {
     @Autowired
     CartService cartService;
 
-    @RequestMapping(value="/sync")
-    public @ResponseBody List<Cart> sync(
-            HttpServletRequest request, HttpServletResponse response,
+    @RequestMapping(value = "/sync", produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public List<Cart> sync( HttpServletRequest request, HttpServletResponse response,
             @RequestParam(value = "cmdList", required = false) String cmdList) {
 
-        System.out.println("!!!!!!!!!!!!");
 //        System.out.println(cmdList;
         boolean isJsonValid = CommonUtil.isJsonValid(cmdList);
-        if( isJsonValid ) {
-            System.out.println("AAAAAAAAAAAAA");
-            // 성공 코드 전송
-            response.setStatus( HttpServletResponse.SC_OK );
-            List<Cart> list = cartService.update(cmdList);
-            System.out.println(list);
-            return cartService.update(cmdList);
+//        if( isJsonValid ) {
+//            // 성공 코드 전송
+//            response.setStatus( HttpServletResponse.SC_OK );
+//            List<Cart> list = cartService.update(cmdList);
+//            System.out.println(list);
+//            return cartService.update(cmdList);
+//
+//        } else {
+//            response.setStatus( HttpServletResponse.SC_BAD_REQUEST);
+//            // 잘못된 json 요청 에러
+//            // 실패 코드 전송송
+//        }
 
-        } else {
-            System.out.println("BBBBBBBBBBBBB");
-            response.setStatus( HttpServletResponse.SC_BAD_REQUEST);
-            // 잘못된 json 요청 에러
-            // 실패 코드 전송송
-        }
-
-        return new ArrayList<Cart>();
+        List<Cart> list = new ArrayList<Cart>();
+        Cart cart = new Cart();
+        cart.setType("folder");
+        list.add(cart);
+        return list;
     }
 
     @RequestMapping(value="/new")
