@@ -14,17 +14,25 @@ public class Folder {
 
     @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private int folderId;
+    private String id;
+    private String folderId;
     private String name;
-    private Date regDate;
+    private Date updateTs;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
+    }
+
+    public String getFolderId() {
+        return folderId;
+    }
+
+    public void setFolderId(String folderId) {
+        this.folderId = folderId;
     }
 
     public String getName() {
@@ -35,19 +43,11 @@ public class Folder {
         this.name = name;
     }
 
-    public int getFolderId() {
-        return folderId;
+    public Date getUpdateTs() {
+        return updateTs;
     }
 
-    public void setFolderId(int folderId) {
-        this.folderId = folderId;
-    }
-
-    public Date getRegDate() {
-        return regDate;
-    }
-
-    public void setRegDate(Date regDate) {
-        this.regDate = regDate;
+    public void setUpdateTs(Date updateTs) {
+        this.updateTs = updateTs;
     }
 }

@@ -18,22 +18,22 @@ public class BookmarkController {
 
     @Autowired BookmarkService bookmarkService;
 
-    @RequestMapping(value = "add", produces = "application/json;charset=UTF-8")
-    @ResponseBody
-    public Bookmark add(
-            HttpServletRequest request,
-            @RequestParam("name") String name,
-            @RequestParam("url") String url,
-            @RequestParam("folderId") int folderId) {
-
-        Bookmark bookmark = new Bookmark();
-        bookmark.setUrl(url);
-        bookmark.setName(name);
-        bookmark.setFolderId(folderId);
-
-        bookmarkService.add(bookmark);
-        return bookmark;
-
+//    @RequestMapping(value = "add", produces = "application/json;charset=UTF-8")
+//    @ResponseBody
+//    public Bookmark add(
+//            HttpServletRequest request,
+//            @RequestParam("name") String name,
+//            @RequestParam("url") String url,
+//            @RequestParam("folderId") int folderId) {
+//
+//        Bookmark bookmark = new Bookmark();
+//        bookmark.setUrl(url);
+//        bookmark.setName(name);
+//        bookmark.setFolderId(folderId);
+//
+//        bookmarkService.add(bookmark);
+//        return bookmark;
+//
 //        String userId = "tmpUserId";
 //
 //        String folderPath = (String) request.getAttribute(
@@ -71,7 +71,7 @@ public class BookmarkController {
 //        String message = "Hello, Spring 3.0!";
 //        System.out.println(message);
 //        return new ModelAndView("home");
-    }
+//    }
 
     @RequestMapping(value="/edit", method= RequestMethod.POST)
     public ModelAndView edit(

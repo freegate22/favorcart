@@ -1,5 +1,6 @@
 package test.java.com.cart.bookmark;
 
+import main.java.com.cart.common.Cart;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -33,6 +34,7 @@ public class BookmarkControllerTest {
 
     @Test
     public void testUpdate() throws Exception {
-
+        Cart.Action action = Cart.Action.getType("add");
+        System.out.println(action.toString());
     }
 }

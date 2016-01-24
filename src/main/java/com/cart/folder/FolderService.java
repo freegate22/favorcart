@@ -1,6 +1,7 @@
 package main.java.com.cart.folder;
 
 import main.java.com.cart.common.Cart;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -12,22 +13,18 @@ import java.util.List;
 @Service
 public class FolderService {
 
-    public Cart doAction(Cart cart) {
-        return null;
-    }
+    @Autowired FolderDao folderDao;
 
     public List<Cart> update(List<Cart> lstFolder) {
 
+        List<Cart> lstResult = new ArrayList<Cart>();
         for(Cart cart : lstFolder){
-
+            Cart returnCart = folderDao.update(cart);
+            if( returnCart != null){
+                lstResult.add(returnCart);
+            }
         }
-        // 명령 하나하나가 1트랜젝션
-        // hibernate 공부필요
 
-        return new ArrayList<Cart>();
+        return lstResult;
     }
 }
-
-
-//    id(client 생성)	action	folderId	name(유니크)	url	time
-//        add	상위폴더	추가될 폴더이름	x

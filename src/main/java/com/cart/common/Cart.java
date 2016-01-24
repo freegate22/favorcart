@@ -19,6 +19,15 @@ public class Cart {
             return value;
         }
 
+        public static Type getType(String paramType){
+            for(Type type : Type.values()){
+                if(paramType.equalsIgnoreCase(type.getValue())) {
+                    return type;
+                }
+            }
+            return null;
+        }
+
     }
 
     public enum Action {
@@ -34,6 +43,15 @@ public class Cart {
 
         public String getValue() {
             return value;
+        }
+
+        public static Action getType(String paramAction){
+            for(Action action : Action.values()){
+                if(paramAction.equalsIgnoreCase(action.getValue())) {
+                    return action;
+                }
+            }
+            return null;
         }
 
     }

@@ -3,13 +3,12 @@
 
 <hibernate-mapping>
     <class name="main.java.com.cart.bookmark.Bookmark" table="bookmark">
-        <id name="id" type="int" unsaved-value="null">
-            <column name="bookmark_id" sql-type="int(11)" not-null="true" />
-            <generator class="assigned" />
+        <id name="id" type="string" unsaved-value="null">
+            <column name="id" sql-type="50" not-null="true" />
         </id>
 
         <property name="folderId">
-            <column name="folder_id" sql-type="int(11)" not-null="true" />
+            <column name="folder_id" sql-type="50" not-null="true" />
         </property>
         <property name="name">
             <column name="bookmark_name" length="100" not-null="true" />
@@ -17,6 +16,8 @@
         <property name="url">
             <column name="bookmark_url" not-null="true" />
         </property>
-
+        <property name="updateTs">
+            <column name="update_ts" not-null="true" />
+        </property>
     </class>
 </hibernate-mapping>

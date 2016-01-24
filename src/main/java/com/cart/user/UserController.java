@@ -25,7 +25,7 @@ public class UserController {
 
         Bookmark bookmark = new Bookmark();
         bookmark.setName("aa");
-        bookmark.setFolderId(1);
+        bookmark.setFolderId("1");
         bookmark.setUrl("aa");
 
         Folder folder = new Folder();

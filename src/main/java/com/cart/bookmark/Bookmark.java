@@ -14,26 +14,26 @@ import java.util.Date;
 public class Bookmark{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private int folderId;
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String id;
+    private String folderId;
     private String name;
     private String url;
-    private Date regDate;
+    private Date updateTs;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public int getFolderId() {
+    public String getFolderId() {
         return folderId;
     }
 
-    public void setFolderId(int folderId) {
+    public void setFolderId(String folderId) {
         this.folderId = folderId;
     }
 
@@ -53,11 +53,11 @@ public class Bookmark{
         this.url = url;
     }
 
-    public Date getRegDate() {
-        return regDate;
+    public Date getUpdateTs() {
+        return updateTs;
     }
 
-    public void setRegDate(Date regDate) {
-        this.regDate = regDate;
+    public void setUpdateTs(Date updateTs) {
+        this.updateTs = updateTs;
     }
 }

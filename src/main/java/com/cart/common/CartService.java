@@ -31,6 +31,7 @@ public class CartService {
         List<Cart> lstBookmark = new ArrayList<Cart>();
         List<Cart> lstResultCart = new ArrayList<Cart>();
 
+        System.out.println(cmdList);
         Gson gson = new Gson();
         JsonElement jsonCmdList = new JsonParser().parse(cmdList);
         JsonArray jsonArray = jsonCmdList.getAsJsonArray();

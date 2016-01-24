@@ -21,14 +21,14 @@ public class BookmarkDao {
 
         String id = cart.getId();
         long regDate = Long.parseLong(cart.getRegDate());
-        Cart.Action action = Cart.Action.valueOf(cart.getAction());
+        Cart.Action action = Cart.Action.getType(cart.getAction());
 
         Bookmark newBookmark = new Bookmark();
-        newBookmark.setId(Integer.parseInt(id));
-        newBookmark.setFolderId(Integer.parseInt(cart.getFolderId()));
+        newBookmark.setId(id);
+        newBookmark.setFolderId(cart.getFolderId());
         newBookmark.setName(cart.getName());
         newBookmark.setUrl(cart.getUrl());
-        newBookmark.setRegDate(new Date(regDate));
+        newBookmark.setUpdateTs(new Date(regDate));
 
 
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -46,7 +46,7 @@ public class BookmarkDao {
                 break;
 
             case EDIT :
-                if( bookmark == null || bookmark.getRegDate().getTime() < regDate ){
+                if( bookmark == null || bookmark.getUpdateTs().getTime() < regDate ){
                     session.saveOrUpdate(newBookmark);
                     isReturn = true;
                 }
