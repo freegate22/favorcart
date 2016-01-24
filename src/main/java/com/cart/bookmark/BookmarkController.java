@@ -18,8 +18,9 @@ public class BookmarkController {
 
     @Autowired BookmarkService bookmarkService;
 
-    @RequestMapping(value="/add")
-    public @ResponseBody Bookmark add(
+    @RequestMapping(value = "add", produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public Bookmark add(
             HttpServletRequest request,
             @RequestParam("name") String name,
             @RequestParam("url") String url,

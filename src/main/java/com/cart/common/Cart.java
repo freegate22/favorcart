@@ -5,7 +5,7 @@ package main.java.com.cart.common;
  */
 public class Cart {
 
-    enum Type {
+    public enum Type {
         FOLDER("folder"),
         BOOKMARK("bookmark");
 
@@ -21,15 +21,30 @@ public class Cart {
 
     }
 
+    public enum Action {
+        ADD("add"),
+        EDIT("edit"),
+        REMOVE("remove");
+
+        private String value;
+
+        private Action(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+    }
 
     private String type;
+    private String id;
     private String action;
     private String folderId;
-    private String destFolderId;
     private String name;
     private String url;
-    private String bookmarkId;
-    private long regDate;
+    private String regDate;
 
     public String getType() {
         return type;
@@ -37,6 +52,14 @@ public class Cart {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getAction() {
@@ -55,14 +78,6 @@ public class Cart {
         this.folderId = folderId;
     }
 
-    public String getDestFolderId() {
-        return destFolderId;
-    }
-
-    public void setDestFolderId(String destFolderId) {
-        this.destFolderId = destFolderId;
-    }
-
     public String getName() {
         return name;
     }
@@ -79,19 +94,11 @@ public class Cart {
         this.url = url;
     }
 
-    public String getBookmarkId() {
-        return bookmarkId;
-    }
-
-    public void setBookmarkId(String bookmarkId) {
-        this.bookmarkId = bookmarkId;
-    }
-
-    public long getRegDate() {
+    public String getRegDate() {
         return regDate;
     }
 
-    public void setRegDate(long regDate) {
+    public void setRegDate(String regDate) {
         this.regDate = regDate;
     }
 }

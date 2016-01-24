@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by hshs on 2015. 9. 25..
@@ -18,6 +19,7 @@ public class Bookmark{
     private int folderId;
     private String name;
     private String url;
+    private Date regDate;
 
     public int getId() {
         return id;
@@ -51,5 +53,11 @@ public class Bookmark{
         this.url = url;
     }
 
+    public Date getRegDate() {
+        return regDate;
+    }
 
+    public void setRegDate(Date regDate) {
+        this.regDate = regDate;
+    }
 }

@@ -21,6 +21,7 @@ public class FolderController {
     @RequestMapping(value="/home")
     public ModelAndView home(){
 
+        System.out.println("home!!!!");
         ModelAndView mav = new ModelAndView();
         mav.setViewName("home");
         return mav;

@@ -30,6 +30,7 @@ public class CartService {
         List<Cart> lstFolder = new ArrayList<Cart>();
         List<Cart> lstBookmark = new ArrayList<Cart>();
         List<Cart> lstResultCart = new ArrayList<Cart>();
+
         Gson gson = new Gson();
         JsonElement jsonCmdList = new JsonParser().parse(cmdList);
         JsonArray jsonArray = jsonCmdList.getAsJsonArray();

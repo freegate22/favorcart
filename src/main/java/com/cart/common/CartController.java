@@ -19,10 +19,11 @@ import java.util.List;
 
 /**
  * Created by hshs on 2016. 1. 1..
+ * hibernate 공부 후 원쿼리로 동작하도록
  */
 @Controller
 //@RequestMapping("/1")
-@RequestMapping(value={"/1","/"})
+@RequestMapping(value={"/1"})
 public class CartController {
 
     @Autowired
@@ -33,26 +34,28 @@ public class CartController {
     public List<Cart> sync( HttpServletRequest request, HttpServletResponse response,
             @RequestParam(value = "cmdList", required = false) String cmdList) {
 
-//        System.out.println(cmdList;
         boolean isJsonValid = CommonUtil.isJsonValid(cmdList);
-//        if( isJsonValid ) {
-//            // 성공 코드 전송
-//            response.setStatus( HttpServletResponse.SC_OK );
-//            List<Cart> list = cartService.update(cmdList);
-//            System.out.println(list);
+        if( isJsonValid ) {
+            // 성공 코드 전송
+            List<Cart> list = cartService.update(cmdList);
+            System.out.println(list);
+            response.setStatus( HttpServletResponse.SC_OK );
 //            return cartService.update(cmdList);
-//
-//        } else {
-//            response.setStatus( HttpServletResponse.SC_BAD_REQUEST);
-//            // 잘못된 json 요청 에러
-//            // 실패 코드 전송송
-//        }
 
-        List<Cart> list = new ArrayList<Cart>();
-        Cart cart = new Cart();
-        cart.setType("folder");
-        list.add(cart);
-        return list;
+            List<Cart> tmplist = new ArrayList<Cart>();
+            Cart cart = new Cart();
+            cart.setType("folder");
+            tmplist.add(cart);
+            return tmplist;
+
+        } else {
+            response.setStatus( HttpServletResponse.SC_BAD_REQUEST);
+            // 잘못된 json 요청 에러
+            // 실패 코드 전송송
+            return new ArrayList<Cart>();
+        }
+
+
     }
 
     @RequestMapping(value="/new")
