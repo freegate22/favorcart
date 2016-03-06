@@ -9,4 +9,15 @@
 
        <!-- 어노테이션 방식으로 등록된 빈들을 스캔하기 위한 태그 -->
 
+
+       <bean id="springDao" class="main.java.com.cart.common.SpringDao">
+              <property name="dataSource" ref="dataSource"/>
+       </bean>
+
+       <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+              <property name="driverClassName" value="${jdbc.driverClassName}"/>
+              <property name="url" value="${jdbc.url}"/>
+              <property name="username" value="${jdbc.username}"/>
+              <property name="password" value="${jdbc.password}"/>
+       </bean>
 </beans>
